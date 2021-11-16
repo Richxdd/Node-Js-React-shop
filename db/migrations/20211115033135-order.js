@@ -1,12 +1,12 @@
 'use strict';
 
-const {ORDER_TABLE} = require('./../models/order.model')
-const {CUSTOMER_TABLE} = require('./../models/customer.model')
-const {DataTypes, Sequelize } = require('sequelize');
+const { ORDER_TABLE } = require('./../models/order.model');
+const { CUSTOMER_TABLE } = require('./../models/customer.model');
+const { DataTypes, Sequelize } = require('sequelize');
 
 module.exports = {
   up: async (queryInterface) => {
-    await queryInterface.createTable(ORDER_TABLE,{
+    await queryInterface.createTable(ORDER_TABLE, {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -30,10 +30,10 @@ module.exports = {
         field: 'created_at',
         defaultValue: Sequelize.NOW,
       },
-    })
+    });
   },
 
   down: async (queryInterface) => {
-    await queryInterface.dropTable(ORDER_TABLE)
+    await queryInterface.dropTable(ORDER_TABLE);
   }
 };
